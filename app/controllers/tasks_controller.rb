@@ -9,7 +9,9 @@ class TasksController < ApplicationController
 	end
 
 	def create
-		@task
+		@task = Task.new(task_params)
+		@task.save
+		redirect_to task_path(@task)
 	end	
 
 	def edit
@@ -18,15 +20,24 @@ class TasksController < ApplicationController
 
 	def update
 		@task = Task.find(params[:id])
-		@task.save
+		@task.update(task_params)
+		 redirect_to task_path(@task)
 	end
 
 	def new
-		@tasks = Task.new
+		@task = Task.new
 	end
 
 	def show
 		@task = Task.find(params[:id])
 	end
+
+	 private
+
+  def task_params
+    # *Strong params*: You need to *whitelist* what can be updated by the user
+    # Never trust user data!
+    params.require(:task).permit(:title, :details)
+  end
 
 end
