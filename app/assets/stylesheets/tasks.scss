@@ -1,6 +1,25 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.task-list {
-  background: #f9f9f9;
+body {
+	background-color: #f9f9f9;
 }
+
+h2 {
+	font-family: 'Raleway', sans-serif;
+	text-align: left;
+	font-weight: lighter;
+	color: #414141;
+}
+
+.task-list {
+  background: #d3d5fd;
+
+}
+
+.page-title {
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	font-weight: lighter;
+}
+
